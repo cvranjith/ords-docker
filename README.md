@@ -8,14 +8,18 @@
 * Run docker build and push it. Example below
 
 ``` bash
+git clone <repo>
  
-cd product
+
+ 
+cd ords-docker/product
+
 wget https://download.oracle.com/otn_software/java/ords/ords-latest.zip
 unzip ords-latest.zip
 rm -f rm -f ords-latest.zip
 cd ..
-docker build -t fsgbu-mum-128.snbomprshared1.gbucdsint02bom.oraclevcn.com:5000/oracle/ords/oracle-ords:22.1.1 .
-docker push fsgbu-mum-128.snbomprshared1.gbucdsint02bom.oraclevcn.com:5000/oracle/ords/oracle-ords:22.1.1 .
+docker build -t oracle-ords:22.1.1 .
+docker push oracle-ords:22.1.1 .
 ```
 
 

@@ -8,9 +8,6 @@
 * Run docker build and push it. Example below
 
 ``` bash
-export http_proxy='http://www-proxy.us.oracle.com:80'
-export https_proxy='http://www-proxy.us.oracle.com:80'
-export no_proxy="localhost,.oraclecorp.com,us.oracle.com,.oraclecloud.com,.in.oracle.com,nl.oracle.com,svc.cluster.local,127.0.0.1,.oraclevcn.com"
  
 cd product
 wget https://download.oracle.com/otn_software/java/ords/ords-latest.zip
@@ -45,7 +42,7 @@ Pre-Requisites
 These steps in this page are documented using 19c. however the steps are exactly same for other databases - 12c/11g/20c. Just change the variables accordingly
 
 ```
-docker run -dit --net my-net --name ords-db -p 2521:1521 fsgbu-mum-128.snbomprshared1.gbucdsint02bom.oraclevcn.com:5000/oracle-db/oracle-oracle-19.3:embedded
+docker run -dit --net my-net --name ords-db -p 2521:1521 oracle-oracle-19.3:embedded
 ```
 
 Tip: For testing purpose: To quickly spin a blank 19c DB you may follow this 2.6.3 Running Oracle DB 19c (19.3-ee) all-inclusive  or a more lighter 12c DB using  2.6.1 Running an all-inclusive small-footprint Oracle DB (12c) on Docker 
@@ -64,7 +61,7 @@ docker run -it --rm \
   -e SYSDBA_PASSWORD=Oracle123 \
   -e ORDS_ARGS="install-simple" \
   -e ORDS_PUBLIC_USER_PASSWORD=OrdsPU123 \
-fsgbu-mum-128.snbomprshared1.gbucdsint02bom.oraclevcn.com:5000/oracle/ords/oracle-ords:22.3
+oracle-ords:22.3
 ```
 
 PS: In case you dont want to use SYS user for installing ORDS, a privileged user can be used. For this
@@ -106,7 +103,7 @@ docker run -dit --name ords-c-221 \
   -e DB_PORT=1521 \
   -e DB_SERVICENAME=PDB1 \
   -e ORDS_PUBLIC_USER_PASSWORD=OrdsPU123 \
-fsgbu-mum-128.snbomprshared1.gbucdsint02bom.oraclevcn.com:5000/oracle/ords/oracle-ords:22.3
+oracle-ords:22.3
 ```
 
 Or With the below Minimal arguments we can create SSL (HTTPS) endpoints.
@@ -120,7 +117,7 @@ docker run -dit --name ords-c-221 \
   -e DB_SERVICENAME=PDB1 \
   -e ORDS_PUBLIC_USER_PASSWORD=OrdsPU123 \
   -e STANDALONE_USE_HTTPS="true" \
-fsgbu-mum-128.snbomprshared1.gbucdsint02bom.oraclevcn.com:5000/oracle/ords/oracle-ords:22.3
+oracle-ords:22.3
 ```
 
 Note:
@@ -142,7 +139,7 @@ docker run -dit --name ords-c-221 \
     -e CONFIG_SET_1="jdbc.MaxLimit 50" \
     -e CONFIG_SET_2="cache.metadata.enabled true" \
     -e CONFIG_SET_3="cache.metadata.timeout 180s" \
-fsgbu-mum-128.snbomprshared1.gbucdsint02bom.oraclevcn.com:5000/oracle/ords/oracle-ords:22.3
+oracle-ords:22.3
 ```
 
 
@@ -174,7 +171,7 @@ docker run -it --rm \
   -e DB_SERVICENAME=PDB1 \
   -e ORDS_PUBLIC_USER_PASSWORD=OrdsPU123 \
   -e ORDS_ARGS=" uninstall --interactive" \
-fsgbu-mum-128.snbomprshared1.gbucdsint02bom.oraclevcn.com:5000/oracle/ords/oracle-ords:22.3
+oracle-ords:22.3
 
 ```
 

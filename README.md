@@ -1,4 +1,9 @@
 
+### ORDS docker image
+
+Docker image for ORDS (versions above 22.1) can be built using this. Note that there is Oracle's official version of github https://github.com/oracle/docker-images/tree/main/OracleRestDataServices for building docker image.
+
+This project was created before that, Hence maintaining it for continuing the same experience (docker arguments etc)
 
 
 ### How to Build
@@ -8,10 +13,7 @@
 * Run docker build and push it. Example below
 
 ``` bash
-git clone <repo>
- 
-
- 
+git clone https://github.com/cvranjith/ords-docker.git
 cd ords-docker/product
 
 wget https://download.oracle.com/otn_software/java/ords/ords-latest.zip
@@ -30,7 +32,7 @@ docker push oracle-ords:22.1.1 .
 As ORDS 22.1 onwards the installer has undergone major changes, a separate Dockerfile is maintained. Majority of the docker arguments are kept same as before, however some minor changes are there.
 
 
-Following simplified methods can be followed to install ORDS and RESTUTIL
+Following simplified methods can be followed to install ORDS 
 
 * Pre-Requisites
 * Install ORDS

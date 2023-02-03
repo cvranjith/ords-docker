@@ -149,17 +149,8 @@ Note: Following additional optional JDBC parameters can be passed as env vars to
 Sample compose file:
 
 
-Install RESTUTIL
 
-Rest Util is a simple wrapper written to leverage ORDS features. to install , just run the below command.... A schema along with a few objects will be created. the value. sys or appropriate DBA account needs to be passed to run this. Defaullt schema name is RESTUTIL. it can be changed as required. last 3 arguments are SCHEMANAME PASSWORD Default-tablespace.
-
-
-Alternatively / if you dont have access to the install scripts' http endpoint, you can copy the restuil install folder into the container and execute locally
-docker cp /scratch/share/japac-file-share-mnt/scripts/ords/restutil-v3 ords-db:/tmp/
-docker exec -it ords-db bash -c "sqlplus sys/Oracle123@PDB1 as sysdba @/tmp/restutil-v3/install-rest-util.sql RESTUTIL RESTUTIL USERS"
-
-
-UInstall ORDS
+UnInstall ORDS
 
 Use the ORDS_ARGS "uninstall --interactive" and follow the instructions.
 
